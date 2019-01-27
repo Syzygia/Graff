@@ -10,9 +10,14 @@ namespace Gra_PH_ine.Figures
 {
     public abstract class Figure
     {
+        protected List<Point> points = new List<Point>();
         public  Figure()
         {
-            points= new <List>
+            
+        }
+        public Figure(Point point)
+        {
+            points = new List<Point>{point,point};
         }
         public virtual void Draw(DrawingContext kt)
         {
