@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Gra_PH_ine.Figures
 {
-    class Figure
+    public class Line:Figure
     {
+        public Line()
+        {
+
+        }
     }
 }
