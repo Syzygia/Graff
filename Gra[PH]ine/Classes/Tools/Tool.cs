@@ -17,7 +17,7 @@ namespace Gra_PH_ine.Classes.Tools
         {
 
         }
-        public virtual void MouseClick(Point p)
+        public virtual void MouseMove(Point p)
         {
 
         }
