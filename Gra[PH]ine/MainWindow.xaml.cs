@@ -6,7 +6,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -39,6 +38,10 @@ namespace Gra_PH_ine
                 NotArtist.SelectedTool.MouseMove(e.GetPosition(MainCanvas));
                 Invalidate();
             }
+        }
+        private void Canvas_MouseLeave(object sender, MouseEventArgs e)
+        {
+            NotArtist.SelectedTool=NotArtist.Tools[6];
         }
 
         private void Invalidate()
