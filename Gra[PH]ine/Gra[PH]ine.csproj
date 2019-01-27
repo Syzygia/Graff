@@ -69,6 +69,7 @@
     <Compile Include="Classes\Figures\Rectangle.cs" />
     <Compile Include="Classes\NotArtist.cs" />
     <Compile Include="Classes\Tools\LineTool.cs" />
+    <Compile Include="Classes\Tools\RectTool.cs" />
     <Compile Include="Classes\Tools\Tool.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
