@@ -3,10 +3,10 @@ using Gra_PH_ine.Figures;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-
+using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -31,7 +31,16 @@ namespace Gra_PH_ine
             NotArtist.SelectedTool.MouseDown(e.GetPosition(MainCanvas));
             Invalidate();
         }
-       
+
+        private void MainCanvasMouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                NotArtist.SelectedTool.MouseMove(e.GetPosition(MainCanvas));
+                Invalidate();
+            }
+        }
+
         private void Invalidate()
         {
             NotArtist.FgtHost.Clear();
@@ -43,15 +52,6 @@ namespace Gra_PH_ine
             }
             dc.Close();
             NotArtist.FgtHost.Children.Add(dv);
-        }
-
-        private void MainCanvasMouseMove(object sender, MouseEventArgs e)
-        {
-            if (e.LeftButton == MouseButtonState.Pressed)
-            {
-                NotArtist.SelectedTool.MouseMove(e.GetPosition(MainCanvas));
-                Invalidate();
-            }
         }
     }
 }
