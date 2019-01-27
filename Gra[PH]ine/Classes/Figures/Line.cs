@@ -9,10 +9,22 @@ namespace Gra_PH_ine.Figures
 {
     public class Line:Figure
     {
-        protected  List<Point> points = new List<Point>();
+        
         public Line()
         {
            
+        }
+        public Line(Point p) : base(p)
+        {
+
+        }
+        public override void AddPoint(Point p)
+        {
+            points[1] = p;
+        }
+        public override void Draw (DrawingContext kt)
+        {
+            kt.DrawLine(new Pen(Brushes.Black, 4), points[0], points[1]);
         }
     }
 }
