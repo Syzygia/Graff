@@ -66,6 +66,7 @@
     <Compile Include="Classes\FgtHost.cs" />
     <Compile Include="Classes\Figures\Figure.cs" />
     <Compile Include="Classes\Figures\Line.cs" />
+    <Compile Include="Classes\Figures\Rectangle.cs" />
     <Compile Include="Classes\NotArtist.cs" />
     <Compile Include="Classes\Tools\LineTool.cs" />
     <Compile Include="Classes\Tools\Tool.cs" />
