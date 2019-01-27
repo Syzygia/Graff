@@ -1,20 +1,21 @@
-﻿using System;
+﻿using Gra_PH_ine.Classes.Figures;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Shapes;
+
 
 namespace Gra_PH_ine.Classes.Tools
 {
     class PolylineTool:Tool
     {
-       Polyline myPolyline = new Polyline();
+       
 
         public override void MouseDown(Point p)
         {
-         //   NotArtist.Figures.Add(myPolyline);
+            NotArtist.Figures.Add(new Polyline(p));
         }
 
         public override void MouseMove(Point p)

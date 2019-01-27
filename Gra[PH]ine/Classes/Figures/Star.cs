@@ -49,7 +49,7 @@ namespace Gra_PH_ine.Classes.Figures
                 }
             }
             geometry.Freeze();
-            kt.DrawGeometry(new SolidColorBrush(Colors.Transparent), new Pen(Brushes.Black, 10), geometry);
+            kt.DrawGeometry(new SolidColorBrush(Colors.Transparent), new Pen(Brushes.Black, 4), geometry);
         }
     }
 }

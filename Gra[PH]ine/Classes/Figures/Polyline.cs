@@ -1,4 +1,5 @@
-﻿using Gra_PH_ine.Figures;
+﻿using Gra_PH_ine.Classes;
+using Gra_PH_ine.Figures;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,25 +8,28 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
 
-//namespace Gra_PH_ine.Classes.Figures
-
-    /*class Polyline:Figure
+namespace Gra_PH_ine.Classes.Figures
+{ 
+    class Polyline:Figure
     {
-        //public Polyline(Point p) : base(p)
+        public Polyline(Point p) : base(p)
         {
 
         }
        public override void AddPoint(Point p)
         {
-            points[1] = p;
+            points.Add(p);
         }
         public override void Draw(DrawingContext dc)
         {
-            myPolyline = new Polyline();
-            myPolyline.Stroke = System.Windows.Media.Brushes.SlateGray;
-            myPolyline.StrokeThickness = 2;
-
-            //  dc.DrawPolyline(new SolidColorBrush(Colors.Transparent), new Pen(Brushes.Black, 4), center, space.X, space.Y);
+        var geo = new StreamGeometry();
+        using (var geoContext = geo.Open())
+        {
+            geoContext.BeginFigure(points[0], false, false);
+            geoContext.PolyLineTo(points, true, false);
         }
+        dc.DrawGeometry(null, new Pen(Brushes.Black, 4), geo);
+
     }
-}*/
+}
+}
