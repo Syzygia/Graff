@@ -70,11 +70,14 @@
     <Compile Include="Classes\Figures\Polyline.cs" />
     <Compile Include="Classes\Figures\Rectangle.cs" />
     <Compile Include="Classes\Figures\RoundRect.cs" />
+    <Compile Include="Classes\Figures\Star.cs" />
     <Compile Include="Classes\NotArtist.cs" />
     <Compile Include="Classes\Tools\EllipseToolcs.cs" />
     <Compile Include="Classes\Tools\LineTool.cs" />
+    <Compile Include="Classes\Tools\PolylineTool.cs" />
     <Compile Include="Classes\Tools\RectTool.cs" />
     <Compile Include="Classes\Tools\RoundRectTool.cs" />
+    <Compile Include="Classes\Tools\StarTool.cs" />
     <Compile Include="Classes\Tools\Tool.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
