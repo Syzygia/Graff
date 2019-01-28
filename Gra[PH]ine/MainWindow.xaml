@@ -6,8 +6,10 @@
         xmlns:local="clr-namespace:Gra_PH_ine"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Grid HorizontalAlignment="Left"  VerticalAlignment="Top"  x:Name="Panel" Background="AliceBlue" Height="55" Width="585" Panel.ZIndex="1" >
+    
+    <Grid >
+
+        <Grid HorizontalAlignment="Left"  x:Name="Panel" Background="AliceBlue" Width="792" Panel.ZIndex="1" Height="49" VerticalAlignment="Top" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="45*"></RowDefinition>
             </Grid.RowDefinitions>
@@ -22,7 +24,8 @@
                 <ColumnDefinition Width="45"></ColumnDefinition>
             </Grid.ColumnDefinitions>
         </Grid>
-        <Grid Margin="0,55,717,0" x:Name="Palette" Background="Bisque" Panel.ZIndex="2" >
+
+        <Grid Margin="0,49,712,0" x:Name="Palette" Background="Bisque" Panel.ZIndex="2" Grid.RowSpan="2" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="20*"></RowDefinition>
                 <RowDefinition Height="20*"></RowDefinition>
@@ -46,10 +49,16 @@
                 <ColumnDefinition Width="35"></ColumnDefinition>
             </Grid.ColumnDefinitions>
         </Grid>
-        <Canvas Background="Gray" x:Name="MainCanvas" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MouseDown="MainCanvasMouseDown" MouseMove="MainCanvasMouseMove" MouseLeave="Canvas_MouseLeave" Loaded="MainCanvas_Loaded" SizeChanged="MainCanvas_SizeChanged" MouseUp="MainCanvasMouseUp" >
-
-
-        </Canvas>
+        <Grid Margin="85,49,0,0" >
+            
+            <ScrollViewer Name="ScrollViewerCanvas"  VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" CanContentScroll="False" Margin="15,4,5,0" HorizontalAlignment="Stretch"   VerticalAlignment="Stretch"  Width="772" RenderTransformOrigin="-0.09,0.498" Grid.ColumnSpan="2">
+                <Canvas Background="Gray" x:Name="MainCanvas"  VerticalAlignment="Top" HorizontalAlignment="Left"  MouseDown="MainCanvasMouseDown" MouseMove="MainCanvasMouseMove" MouseLeave="Canvas_MouseLeave" Loaded="MainCanvas_Loaded" SizeChanged="MainCanvas_SizeChanged" MouseUp="MainCanvasMouseUp" Height="415" Width="772" RenderTransformOrigin="0.493,0.506" >
+                    <Canvas.LayoutTransform>
+                        <ScaleTransform x:Name="layout"/>
+                    </Canvas.LayoutTransform>
+                </Canvas>
+            </ScrollViewer>
+        </Grid>
     </Grid>
 </Window>
 
