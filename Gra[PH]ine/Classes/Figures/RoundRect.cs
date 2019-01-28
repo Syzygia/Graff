@@ -11,6 +11,19 @@ namespace Gra_PH_ine.Classes.Figures
 {
     class RoundRect:Figure
     {
+        public RoundRect()
+        {
+
+        }
+        public override Figure Clone()
+        {
+            return new RoundRect
+            {
+                points = new List<Point>(points),
+                Fill = this.Fill,
+                Line = this.Line
+            };
+        }
         public RoundRect(Point p) : base(p)
         {
             Fill = NotArtist.SelectedFill.Clone();

@@ -12,6 +12,19 @@ namespace Gra_PH_ine.Classes.Figures
 { 
     class Polyline:Figure
     {
+        public Polyline()
+        {
+
+        }
+        public override Figure Clone()
+        {
+            return new Polyline
+            {
+                points = new List<Point>(points),
+                Fill = this.Fill,
+                Line = this.Line
+            };
+        }
         public Polyline(Point p) : base(p)
         {
                 Line = NotArtist.SelectedLine.Clone();

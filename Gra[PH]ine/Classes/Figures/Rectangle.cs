@@ -11,6 +11,15 @@ namespace Gra_PH_ine.Classes.Figures
 {
     class Rectangle:Figure
     {
+        public override Figure Clone()
+        {
+            return new Rectangle
+            {
+                points = new List<Point>(points),
+                Fill = this.Fill,
+                Line = this.Line
+            };
+        }
         public Rectangle()
         {
 

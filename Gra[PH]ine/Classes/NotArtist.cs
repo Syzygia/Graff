@@ -68,7 +68,7 @@ namespace Gra_PH_ine.Classes
             {
                 ConditionNumber--;
                 Figures.Clear();
-                foreach (Figure figure in ConditionsCanvas[ConditionNumber - 2])
+                foreach (Figure figure in ConditionsCanvas[ConditionNumber - 1])
                 {
                     Figures.Add(figure.Clone());
                 }

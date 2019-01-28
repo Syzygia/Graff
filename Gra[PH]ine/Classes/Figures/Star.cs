@@ -12,6 +12,15 @@ namespace Gra_PH_ine.Classes.Figures
         {
 
         }
+        public override Figure Clone()
+        {
+            return new Star
+            {
+                points = new List<Point>(points),
+                Fill = this.Fill,
+                Line = this.Line
+            };
+        }
         public Star(Point p) : base(p)
         {
             Fill = NotArtist.SelectedFill.Clone();

@@ -119,7 +119,7 @@ namespace Gra_PH_ine
         }
         private void Canvas_MouseLeave(object sender, MouseEventArgs e)
         {
-            NotArtist.AddCondition();
+           // NotArtist.AddCondition();
             NotArtist.SelectedTool.MouseStop();          
             Invalidate();
         }
