@@ -10,8 +10,9 @@ namespace Gra_PH_ine.Figures
 {
     public abstract class Figure
     {
-        protected List<Point> points = new List<Point>();
-        public  Figure()
+        public  List<Point> points { get; set; }
+        //watch out
+        public Figure()
         {
             
         }

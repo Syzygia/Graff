@@ -100,6 +100,12 @@ namespace Gra_PH_ine
         private void Tool_Click(object sender, RoutedEventArgs e) 
         {
             NotArtist.SelectedTool = NotArtist.Tools[Convert.ToInt32((sender as Button).Tag)];
+            if (Convert.ToInt32((sender as Button).Tag)==6)
+            {
+                MainCanvas.LayoutTransform = new ScaleTransform(NotArtist.ScaleRateX, NotArtist.ScaleRateY);
+               // ScrollViewerCanvas.ScrollToVerticalOffset(NotArtist.DistanceToPointY * NotArtist.ScaleRateY);
+               // ScrollViewerCanvas.ScrollToHorizontalOffset(NotArtist.DistanceToPointX * NotArtist.ScaleRateX);
+            }
         }
 
         private void MainCanvasMouseDown(object sender, MouseButtonEventArgs e)
@@ -132,6 +138,23 @@ namespace Gra_PH_ine
             }
             dc.Close();
             NotArtist.FgtHost.Children.Add(dv);
+        }
+        private void MainCanvas_Loaded(object sender, RoutedEventArgs e)
+        {
+            NotArtist.CanvasHeigth = MainCanvas.Height;
+            NotArtist.CanvasWidth = MainCanvas.Width;
+        }
+
+        private void MainCanvas_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            NotArtist.CanvasHeigth = MainCanvas.Height;
+            NotArtist.CanvasWidth = MainCanvas.Width;
+        }
+
+        private void MainCanvasMouseUp(object sender, MouseButtonEventArgs e)
+        {
+            NotArtist.SelectedTool.MouseUp(e.GetPosition(MainCanvas));
+            Invalidate();
         }
     }
 }

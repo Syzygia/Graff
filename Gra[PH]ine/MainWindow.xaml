@@ -46,7 +46,7 @@
                 <ColumnDefinition Width="35"></ColumnDefinition>
             </Grid.ColumnDefinitions>
         </Grid>
-        <Canvas Background="Gray" x:Name="MainCanvas" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MouseDown="MainCanvasMouseDown" MouseMove="MainCanvasMouseMove" MouseLeave="Canvas_MouseLeave">
+        <Canvas Background="Gray" x:Name="MainCanvas" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MouseDown="MainCanvasMouseDown" MouseMove="MainCanvasMouseMove" MouseLeave="Canvas_MouseLeave" Loaded="MainCanvas_Loaded" SizeChanged="MainCanvas_SizeChanged" MouseUp="MainCanvasMouseUp" >
 
 
         </Canvas>
