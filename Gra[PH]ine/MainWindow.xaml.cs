@@ -66,7 +66,7 @@ namespace Gra_PH_ine
                 newButton.SetValue(Grid.RowProperty, j);
                 newButton.SetValue(Grid.ColumnProperty, 1);
                 j++;
-                // newButton.Click += new RoutedEventHandler(ButtonFill_Click);
+                 newButton.Click += new RoutedEventHandler(ButtonFill_Click);
                 Palette.Children.Add(newButton);
 
             }
@@ -83,10 +83,18 @@ namespace Gra_PH_ine
                 newButton.SetValue(Grid.ColumnProperty, 0);
                 newButton.SetValue(Grid.RowProperty, j);
                 j++;
-                // newButton.Click += new RoutedEventHandler(ButtonLine_Click);
+                 newButton.Click += new RoutedEventHandler(ButtonLine_Click);
                 Palette.Children.Add(newButton);
 
             }
+        }
+        private void ButtonFill_Click(object sender, RoutedEventArgs e)
+        {
+            NotArtist.SelectedFill = (sender as Button).Tag as Brush;
+        }
+        private void ButtonLine_Click(object sender, RoutedEventArgs e)  
+        {
+            NotArtist.SelectedLine = new Pen((sender as Button).Background, 2.0);           
         }
         private void Tool_Click(object sender, RoutedEventArgs e) 
         {
