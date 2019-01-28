@@ -20,6 +20,12 @@ namespace Gra_PH_ine.Figures
         {
             points = new List<Point>{point,point};
         }
+        public virtual Figure Clone()
+        {
+            return new Line
+            {
+            };
+        }
         public virtual void Draw(DrawingContext kt)
         {
 

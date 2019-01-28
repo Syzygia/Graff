@@ -10,7 +10,8 @@ namespace Gra_PH_ine.Classes
     {
         public static List<Figure> Figures = new List<Figure>();
 
-        public static List<Gra_PH_ine.Classes.Tools.Tool> Tools = new List<Tool>() { new LineTool(),new RectTool(),new EllipseTool(),new RoundRectTool(),new StarTool(),new PolylineTool(), new ZoomTool(), new FakeTool()};
+        public static List<Gra_PH_ine.Classes.Tools.Tool> Tools = new List<Tool>() { new LineTool(),new RectTool(),new EllipseTool(),new RoundRectTool(),new StarTool(),new PolylineTool(),
+            new ZoomTool(), new FakeTool()};
 
         public static Tool SelectedTool = Tools[5];
 
@@ -25,5 +26,66 @@ namespace Gra_PH_ine.Classes
         public static double HandScrollY;
         public static double CanvasWidth;
         public static double CanvasHeigth;
+        public static List<List<Figure>> ConditionsCanvas = new List<List<Figure>>();
+        public static int ConditionNumber = 0;
+
+        public static void AddCondition()
+        {
+            List<Figure> figuresNow = new List<Figure>(Figures);
+            foreach (Figure figure in Figures)
+            {
+                figuresNow.Add(figure.Clone());
+            }
+            ConditionsCanvas.Add(figuresNow);
+            ConditionNumber++;
+            if (ConditionNumber != ConditionsCanvas.Count)
+            {
+                ConditionsCanvas.RemoveRange(ConditionNumber - 1, ConditionsCanvas.Count - ConditionNumber);
+            }
+            Figures.Clear();
+            foreach (Figure figure in figuresNow)
+            {
+                Figures.Add(figure.Clone());
+            }
+            //  Figures =new List<Figure>(figuresNow);
+            //foreach (Figure figure in ConditionsCanvas[ConditionNumber - 1])
+            //{
+            //    figure.Select = false;
+            //    figure.SelectRect = null;
+            //}
+            //if (ConditionsCanvas.Count > 1)
+            //{
+            //    foreach (Figure figure in ConditionsCanvas[ConditionNumber - 2])
+            //    {
+            //        figure.Select = false;
+            //        figure.SelectRect = null;
+            //    }
+            //}
+        }
+        public static void GotoPastCondition()
+        {
+            if (ConditionNumber != 1)
+            {
+                ConditionNumber--;
+                Figures.Clear();
+                foreach (Figure figure in ConditionsCanvas[ConditionNumber - 2])
+                {
+                    Figures.Add(figure.Clone());
+                }
+            }
+        }
+
+        public static void GotoSecondCondition()
+        {
+            if (ConditionNumber != ConditionsCanvas.Count)
+            {
+                ConditionNumber++;
+                Figures.Clear();
+                foreach (Figure figure in ConditionsCanvas[ConditionNumber - 1])
+                {
+                    Figures.Add(figure.Clone());
+                }
+            }
+        }
     }
 }

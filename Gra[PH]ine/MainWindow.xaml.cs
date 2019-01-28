@@ -119,9 +119,8 @@ namespace Gra_PH_ine
         }
         private void Canvas_MouseLeave(object sender, MouseEventArgs e)
         {
-            NotArtist.SelectedTool.MouseStop();
-           // if (((NotArtist.SelectedTool == NotArtist.Tools[6]) && (NotArtist.Figures.Count!=0))&&(NotArtist.Figures[NotArtist.Figures.Count-1] == "ZoomRect" ))
-             //   NotArtist.Figures.Remove(NotArtist.Figures[NotArtist.Figures.Count - 1]);
+            NotArtist.AddCondition();
+            NotArtist.SelectedTool.MouseStop();          
             Invalidate();
         }
 
@@ -151,6 +150,7 @@ namespace Gra_PH_ine
 
         private void MainCanvasMouseUp(object sender, MouseButtonEventArgs e)
         {
+            NotArtist.AddCondition();
             NotArtist.SelectedTool.MouseUp(e.GetPosition(MainCanvas));
             if (NotArtist.SelectedTool==NotArtist.Tools[6])
             {
@@ -158,6 +158,13 @@ namespace Gra_PH_ine
                 ScrollViewerCanvas.ScrollToVerticalOffset(NotArtist.DistanceToPointY * NotArtist.ScaleRateY);
                 ScrollViewerCanvas.ScrollToHorizontalOffset(NotArtist.DistanceToPointX * NotArtist.ScaleRateX);
             }
+            Invalidate();
+        }
+
+        private void Goto_Past(object sender, RoutedEventArgs e)
+        {
+            NotArtist.GotoPastCondition();
+            
             Invalidate();
         }
     }
