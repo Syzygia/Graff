@@ -13,12 +13,12 @@ namespace Gra_PH_ine.Classes.Figures
     {
         public Rectangle()
         {
-            Fill = NotArtist.SelectedFill.Clone();
-            Line = NotArtist.SelectedLine.Clone();
+
         }
         public Rectangle(Point p) : base(p)
         {
-
+            Fill = NotArtist.SelectedFill.Clone();
+            Line = NotArtist.SelectedLine.Clone();
         }
         public override void AddPoint(Point p)
         {
