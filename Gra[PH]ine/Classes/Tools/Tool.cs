@@ -9,9 +9,10 @@ namespace Gra_PH_ine.Classes.Tools
 {
     public class Tool
     {
-       public virtual void MouseDown(Point p)
+        protected bool pressed = false;
+        public virtual void MouseDown(Point p)
         {
-            
+         pressed = true;
         }
         public virtual void MouseUp(Point p)
         {
@@ -20,6 +21,11 @@ namespace Gra_PH_ine.Classes.Tools
         public virtual void MouseMove(Point p)
         {
 
+        }
+        public virtual void MouseStop()
+        {
+            if (pressed)
+               pressed=false;
         }
     }
 }

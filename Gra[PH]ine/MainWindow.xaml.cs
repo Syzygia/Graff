@@ -1,4 +1,5 @@
 ﻿using Gra_PH_ine.Classes;
+using Gra_PH_ine.Classes.Tools;
 using Gra_PH_ine.Figures;
 using System;
 using System.Collections.Generic;
@@ -117,7 +118,7 @@ namespace Gra_PH_ine
         }
         private void Canvas_MouseLeave(object sender, MouseEventArgs e)
         {
-            NotArtist.SelectedTool=NotArtist.Tools[6];
+            NotArtist.SelectedTool.MouseStop();
         }
 
         private void Invalidate()
