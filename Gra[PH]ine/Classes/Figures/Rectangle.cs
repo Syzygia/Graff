@@ -13,7 +13,8 @@ namespace Gra_PH_ine.Classes.Figures
     {
         public Rectangle()
         {
-
+            Fill = NotArtist.SelectedFill.Clone();
+            Line = NotArtist.SelectedLine.Clone();
         }
         public Rectangle(Point p) : base(p)
         {
@@ -25,7 +26,7 @@ namespace Gra_PH_ine.Classes.Figures
         }
         public override void Draw(DrawingContext kt)
         {
-            kt.DrawRectangle(new SolidColorBrush(Colors.Transparent),new Pen(Brushes.Black, 4),new Rect (points[0],points[1]));
+            kt.DrawRectangle(Fill,Line,new Rect (points[0],points[1]));
         }
     }
 }

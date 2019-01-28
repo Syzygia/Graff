@@ -27,5 +27,8 @@ namespace Gra_PH_ine.Figures
         {
 
         }
+
+        public Brush Fill { get; set; }
+        public Pen Line;
     }
 }

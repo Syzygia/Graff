@@ -14,7 +14,8 @@ namespace Gra_PH_ine.Classes.Figures
         }
         public Star(Point p) : base(p)
         {
-
+            Fill = NotArtist.SelectedFill.Clone();
+            Line = NotArtist.SelectedLine.Clone();
         }
         public override void AddPoint(Point p)
         {
@@ -49,7 +50,7 @@ namespace Gra_PH_ine.Classes.Figures
                 }
             }
             geometry.Freeze();
-            kt.DrawGeometry(new SolidColorBrush(Colors.Transparent), new Pen(Brushes.Black, 4), geometry);
+            kt.DrawGeometry(Fill,Line, geometry);
         }
     }
 }

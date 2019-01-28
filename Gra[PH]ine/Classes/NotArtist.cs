@@ -1,5 +1,6 @@
 ﻿
 using System.Collections.Generic;
+using System.Windows.Media;
 using Gra_PH_ine.Classes.Tools;
 using Gra_PH_ine.Figures;
 
@@ -14,5 +15,7 @@ namespace Gra_PH_ine.Classes
         public static Tool SelectedTool = Tools[5];
 
         public static FgtHost FgtHost = new FgtHost();
+        public static Brush SelectedFill = Brushes.White;
+        public static Pen SelectedLine = new Pen(Brushes.Black, 4);
     }
 }

@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media;
 using System.Windows;
+using Gra_PH_ine.Classes;
+
 namespace Gra_PH_ine.Figures
 {
     public class Line:Figure
@@ -16,7 +18,8 @@ namespace Gra_PH_ine.Figures
         }
         public Line(Point p) : base(p)
         {
-
+            Fill = NotArtist.SelectedFill.Clone();
+            Line = NotArtist.SelectedLine.Clone();
         }
         public override void AddPoint(Point p)
         {
@@ -24,7 +27,7 @@ namespace Gra_PH_ine.Figures
         }
         public override void Draw (DrawingContext kt)
         {
-            kt.DrawLine(new Pen(Brushes.Black, 4), points[0], points[1]);
+            kt.DrawLine(Line, points[0], points[1]);
         }
     }
 }

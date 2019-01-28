@@ -14,8 +14,9 @@ namespace Gra_PH_ine.Classes.Figures
         {
             public Ellipse(Point p) : base(p)
             {
-
-            }
+            Fill = NotArtist.SelectedFill.Clone();
+            Line = NotArtist.SelectedLine.Clone();
+        }
             public override void AddPoint(Point p)
             {
                 points[1] = p;
@@ -25,7 +26,7 @@ namespace Gra_PH_ine.Classes.Figures
                 var space = Vector.Divide(Point.Subtract(points[0], points[1]), 2.0);
                 var center = Point.Add(points[1], space);
 
-                dc.DrawEllipse(new SolidColorBrush(Colors.Transparent), new Pen(Brushes.Black, 4), center, space.X, space.Y);
+                dc.DrawEllipse(Fill, Line, center, space.X, space.Y);
             }
         }
     }

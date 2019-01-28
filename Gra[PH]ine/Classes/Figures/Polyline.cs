@@ -14,7 +14,7 @@ namespace Gra_PH_ine.Classes.Figures
     {
         public Polyline(Point p) : base(p)
         {
-
+                Line = NotArtist.SelectedLine.Clone();
         }
        public override void AddPoint(Point p)
         {
@@ -28,7 +28,7 @@ namespace Gra_PH_ine.Classes.Figures
             geoContext.BeginFigure(points[0], false, false);
             geoContext.PolyLineTo(points, true, false);
         }
-        dc.DrawGeometry(null, new Pen(Brushes.Black, 4), geo);
+        dc.DrawGeometry(null, Line, geo);
 
     }
 }

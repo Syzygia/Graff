@@ -13,6 +13,8 @@ namespace Gra_PH_ine.Classes.Figures
     {
         public RoundRect(Point p) : base(p)
         {
+            Fill = NotArtist.SelectedFill.Clone();
+            Line = NotArtist.SelectedLine.Clone();
 
         }
         public override void AddPoint(Point p)
@@ -21,7 +23,7 @@ namespace Gra_PH_ine.Classes.Figures
         }
         public override void Draw(DrawingContext dc)
         {           
-            dc.DrawRoundedRectangle(new SolidColorBrush(Colors.Transparent), new Pen(Brushes.Black, 4),new Rect (points[0],points[1]),30,30 );
+            dc.DrawRoundedRectangle(Fill, Line,new Rect (points[0],points[1]),30,30 );
         }
     }
 }

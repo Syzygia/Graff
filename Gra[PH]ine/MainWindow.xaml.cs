@@ -24,7 +24,7 @@ namespace Gra_PH_ine
         {
             InitializeComponent();
             MainCanvas.Children.Add(NotArtist.FgtHost);
-            for (int i = 0; i < NotArtist.Tools.Count-1; i++)
+            for (int i = 0; i < NotArtist.Tools.Count-1; i++)//Creating Tool button
             {
                 string st = "../icons/" + NotArtist.Tools[i].GetType().Name + ".png";
                 ImageBrush img = new ImageBrush();
@@ -46,6 +46,46 @@ namespace Gra_PH_ine
                 btn.Tag = i;
                 btn.HorizontalAlignment = HorizontalAlignment.Left;
                 btn.Click += new RoutedEventHandler(Tool_Click);
+            }
+            Brush[] colors =                //palitte
+            {
+                Brushes.Crimson,Brushes.Maroon,Brushes.DeepPink,Brushes.DarkOrange,Brushes.Yellow,Brushes.Fuchsia,Brushes.BlueViolet,Brushes.Indigo,Brushes.Lime,Brushes.Teal,
+                Brushes.Aqua,Brushes.LightCyan,Brushes.Blue,Brushes.Navy,Brushes.Ivory,Brushes.Black,
+
+            };
+            int j = 0;
+            foreach (var brush in colors)    //button of palette (fill color)
+            {
+                Button newButton = new Button()
+                {
+                    Width = 20,
+                    Height = 20,
+                    Background = brush,
+                    Tag = brush
+                };
+                newButton.SetValue(Grid.RowProperty, j);
+                newButton.SetValue(Grid.ColumnProperty, 1);
+                j++;
+                // newButton.Click += new RoutedEventHandler(ButtonFill_Click);
+                Palette.Children.Add(newButton);
+
+            }
+            j = 0;
+            foreach (var brush in colors)     //button of palette (line collor)
+            {
+                Button newButton = new Button()
+                {
+                    Width = 20,
+                    Height = 20,
+                    Background = brush,
+                    Tag = brush
+                };
+                newButton.SetValue(Grid.ColumnProperty, 0);
+                newButton.SetValue(Grid.RowProperty, j);
+                j++;
+                // newButton.Click += new RoutedEventHandler(ButtonLine_Click);
+                Palette.Children.Add(newButton);
+
             }
         }
         private void Tool_Click(object sender, RoutedEventArgs e) 
