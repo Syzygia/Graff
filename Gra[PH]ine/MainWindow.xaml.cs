@@ -24,6 +24,7 @@ namespace Gra_PH_ine
         public MainWindow()
         {
             InitializeComponent();
+            NotArtist.AddCondition();
             MainCanvas.Children.Add(NotArtist.FgtHost);
             for (int i = 0; i < NotArtist.Tools.Count-1; i++)//Creating Tool button
             {
@@ -165,6 +166,12 @@ namespace Gra_PH_ine
         {
             NotArtist.GotoPastCondition();
             
+            Invalidate();
+        }
+
+        private void GotoFuture(object sender, RoutedEventArgs e)
+        {
+            NotArtist.GotoSecondCondition();
             Invalidate();
         }
     }

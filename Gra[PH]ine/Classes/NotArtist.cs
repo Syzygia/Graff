@@ -73,6 +73,7 @@ namespace Gra_PH_ine.Classes
                     Figures.Add(figure.Clone());
                 }
             }
+                
         }
 
         public static void GotoSecondCondition()

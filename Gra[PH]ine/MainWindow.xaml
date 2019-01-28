@@ -24,7 +24,7 @@
                 <ColumnDefinition Width="45"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Button Content="&lt;" Grid.Column="7" HorizontalAlignment="Left" Height="29" Margin="217,10,-202,0" VerticalAlignment="Top" Width="31" Click="Goto_Past"/>
-            <Button Content="&gt;" Grid.Column="7" HorizontalAlignment="Left" Height="29" Margin="248,10,-233,0" VerticalAlignment="Top" Width="31"/>
+            <Button Content="&gt;" Grid.Column="7" HorizontalAlignment="Left" Height="29" Margin="248,10,-233,0" VerticalAlignment="Top" Width="31" Click="GotoFuture"/>
         </Grid>
 
         <Grid Margin="0,49,712,0" x:Name="Palette" Background="Bisque" Panel.ZIndex="2" Grid.RowSpan="2" >
