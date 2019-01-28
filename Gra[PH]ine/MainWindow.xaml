@@ -7,6 +7,22 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid HorizontalAlignment="Left"  VerticalAlignment="Top"  x:Name="Panel" Background="AliceBlue" Height="55" Width="585" Panel.ZIndex="1" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="45"></ColumnDefinition>
+                <ColumnDefinition Width="45"></ColumnDefinition>
+                <ColumnDefinition Width="45"></ColumnDefinition>
+                <ColumnDefinition Width="45"></ColumnDefinition>
+                <ColumnDefinition Width="45"></ColumnDefinition>
+                <ColumnDefinition Width="45"></ColumnDefinition>
+                <ColumnDefinition Width="45"></ColumnDefinition>
+                <ColumnDefinition Width="45"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+        </Grid>
+
         <Canvas Background="Gray" x:Name="MainCanvas" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MouseDown="MainCanvasMouseDown" MouseMove="MainCanvasMouseMove" MouseLeave="Canvas_MouseLeave">
 
         </Canvas>

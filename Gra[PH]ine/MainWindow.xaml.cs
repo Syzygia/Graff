@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -23,6 +24,33 @@ namespace Gra_PH_ine
         {
             InitializeComponent();
             MainCanvas.Children.Add(NotArtist.FgtHost);
+            for (int i = 0; i < NotArtist.Tools.Count-1; i++)
+            {
+                string st = "../icons/" + NotArtist.Tools[i].GetType().Name + ".png";
+                ImageBrush img = new ImageBrush();
+                BitmapImage bi3 = new BitmapImage();
+                bi3.BeginInit();
+                bi3.UriSource = new Uri(st, UriKind.Relative);
+                bi3.EndInit();
+                img.ImageSource = bi3;
+                Button btn = new Button();
+                Panel.Children.Add(btn);
+                btn.BorderBrush = Brushes.Black;
+                btn.Name = "btn" + i;
+                btn.Height = 30;
+                btn.Width = 40;
+                btn.SetValue(Grid.RowProperty, 1);
+                btn.SetValue(Grid.ColumnProperty, i);
+                btn.Background = img;
+                btn.Content = "";
+                btn.Tag = i;
+                btn.HorizontalAlignment = HorizontalAlignment.Left;
+                btn.Click += new RoutedEventHandler(Tool_Click);
+            }
+        }
+        private void Tool_Click(object sender, RoutedEventArgs e) 
+        {
+            NotArtist.SelectedTool = NotArtist.Tools[Convert.ToInt32((sender as Button).Tag)];
         }
 
         private void MainCanvasMouseDown(object sender, MouseButtonEventArgs e)
