@@ -120,6 +120,9 @@ namespace Gra_PH_ine
         private void Canvas_MouseLeave(object sender, MouseEventArgs e)
         {
             NotArtist.SelectedTool.MouseStop();
+           // if (((NotArtist.SelectedTool == NotArtist.Tools[6]) && (NotArtist.Figures.Count!=0))&&(NotArtist.Figures[NotArtist.Figures.Count-1] == "ZoomRect" ))
+             //   NotArtist.Figures.Remove(NotArtist.Figures[NotArtist.Figures.Count - 1]);
+            Invalidate();
         }
 
         private void Invalidate()

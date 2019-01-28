@@ -22,6 +22,15 @@ namespace Gra_PH_ine.Classes.Tools
             if (pressed)
                 NotArtist.Figures[NotArtist.Figures.Count - 1].AddPoint(p);
         }
+        public override void MouseStop()
+        {
+            if (pressed)
+            {
+                pressed = false;
+                NotArtist.Figures.Remove(NotArtist.Figures[NotArtist.Figures.Count - 1]);
+            }
+
+        }
 
         public override void MouseUp(Point point)
         {
