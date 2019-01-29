@@ -27,15 +27,15 @@ namespace Gra_PH_ine.Classes.Tools
             if (pressed)
             {
                 pressed = false;
-                NotArtist.Figures.Remove(NotArtist.Figures[NotArtist.Figures.Count - 1]);
+                if(NotArtist.Figures.Count!=0)
+                    NotArtist.Figures.Remove(NotArtist.Figures[NotArtist.Figures.Count - 1]);
             }
 
         }
 
         public override void MouseUp(Point point)
-        {
-           // List<Point> points = Figure.points.ToList();
-
+        {            
+            pressed = false;
             if (Point.Subtract(NotArtist.Figures[NotArtist.Figures.Count - 1].points[0], NotArtist.Figures[NotArtist.Figures.Count - 1].points[1]).Length > 50)
             {
                 NotArtist.ScaleRateX = NotArtist.CanvasWidth / Math.Abs(NotArtist.Figures[NotArtist.Figures.Count - 1].points[0].X - NotArtist.Figures[NotArtist.Figures.Count - 1].points[1].X);

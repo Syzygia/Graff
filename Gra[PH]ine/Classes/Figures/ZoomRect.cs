@@ -27,6 +27,7 @@ namespace Gra_PH_ine.Classes.Figures
                 Fill = this.Fill,
                 Line = this.Line
             };
+            
         }
 
         public override void Draw(DrawingContext drawingContext)

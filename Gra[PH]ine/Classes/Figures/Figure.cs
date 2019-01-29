@@ -8,7 +8,7 @@ using System.Windows.Media;
 
 namespace Gra_PH_ine.Figures
 {
-    public  class Figure
+    public  class Figure// this one is dangerous
     {
         public  List<Point> points { get; set; }
         //watch out

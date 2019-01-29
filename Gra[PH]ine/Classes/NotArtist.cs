@@ -33,7 +33,7 @@ namespace Gra_PH_ine.Classes
 
         public static void AddCondition()
         {
-            List<Figure> figuresNow = new List<Figure>(Figures);
+            List<Figure> figuresNow = new List<Figure>();
             foreach (Figure figure in Figures)
             {
                 figuresNow.Add(figure.Clone());

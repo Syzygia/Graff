@@ -117,18 +117,17 @@ namespace Gra_PH_ine
             if (e.LeftButton == MouseButtonState.Pressed)
             {
                 NotArtist.SelectedTool.MouseMove(e.GetPosition(MainCanvas));
-                if (NotArtist.SelectedTool == NotArtist.Tools[7])
-                {
-                 //   ScrollViewerCanvas.ScrollToVerticalOffset(NotArtist.HandScrollX);
-                  //  ScrollViewerCanvas.ScrollToHorizontalOffset(NotArtist.HandScrollY);
-                }
+                //if (NotArtist.SelectedTool == NotArtist.Tools[7])
+                //{
+                // //   ScrollViewerCanvas.ScrollToVerticalOffset(NotArtist.HandScrollX);
+                //  //  ScrollViewerCanvas.ScrollToHorizontalOffset(NotArtist.HandScrollY);
+                //}
 
                     Invalidate();
             }
         }
         private void Canvas_MouseLeave(object sender, MouseEventArgs e)
-        {
-           // NotArtist.AddCondition();
+        {           
             NotArtist.SelectedTool.MouseStop();          
             Invalidate();
         }
@@ -159,7 +158,8 @@ namespace Gra_PH_ine
 
         private void MainCanvasMouseUp(object sender, MouseButtonEventArgs e)
         {
-            NotArtist.AddCondition();
+            if (NotArtist.SelectedTool != NotArtist.Tools[6])
+             NotArtist.AddCondition();
             NotArtist.SelectedTool.MouseUp(e.GetPosition(MainCanvas));
             if (NotArtist.SelectedTool==NotArtist.Tools[6])
             {
@@ -182,12 +182,6 @@ namespace Gra_PH_ine
             NotArtist.GotoSecondCondition();
             Invalidate();
         }
-        public void Set_Offset(double X, double Y)
-        {
-            ScrollViewerCanvas.ScrollToVerticalOffset(NotArtist.DistanceToPointY * NotArtist.ScaleRateY);
-            ScrollViewerCanvas.ScrollToHorizontalOffset(NotArtist.DistanceToPointX * NotArtist.ScaleRateX);
-            // appWindow.ScrollViewerCanvas.InvalidateScrollInfo(X).VisualOffset += X;
-            // ScrollBarY.Value += Y;
-        }
+        
     }
 }
