@@ -18,7 +18,16 @@ namespace Gra_PH_ine.Classes.Figures
         public ZoomRect(Point p) : base(p)
         {
             
-        }       
+        }
+        public override Figure Clone()
+        {
+            return new ZoomRect
+            {
+                points = new List<Point>(points),
+                Fill = this.Fill,
+                Line = this.Line
+            };
+        }
 
         public override void Draw(DrawingContext drawingContext)
         {

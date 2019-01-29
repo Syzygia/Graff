@@ -21,8 +21,10 @@ namespace Gra_PH_ine
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static MainWindow appWindow;
         public MainWindow()
         {
+            appWindow = this;
             InitializeComponent();
             NotArtist.AddCondition();
             MainCanvas.Children.Add(NotArtist.FgtHost);
@@ -115,7 +117,13 @@ namespace Gra_PH_ine
             if (e.LeftButton == MouseButtonState.Pressed)
             {
                 NotArtist.SelectedTool.MouseMove(e.GetPosition(MainCanvas));
-                Invalidate();
+                if (NotArtist.SelectedTool == NotArtist.Tools[7])
+                {
+                    ScrollViewerCanvas.ScrollToVerticalOffset(NotArtist.HandScrollX);
+                    ScrollViewerCanvas.ScrollToHorizontalOffset(NotArtist.HandScrollY);
+                }
+
+                    Invalidate();
             }
         }
         private void Canvas_MouseLeave(object sender, MouseEventArgs e)
@@ -173,6 +181,13 @@ namespace Gra_PH_ine
         {
             NotArtist.GotoSecondCondition();
             Invalidate();
+        }
+        public void Set_Offset(double X, double Y)
+        {
+            ScrollViewerCanvas.ScrollToVerticalOffset(NotArtist.DistanceToPointY * NotArtist.ScaleRateY);
+            ScrollViewerCanvas.ScrollToHorizontalOffset(NotArtist.DistanceToPointX * NotArtist.ScaleRateX);
+            // appWindow.ScrollViewerCanvas.InvalidateScrollInfo(X).VisualOffset += X;
+            // ScrollBarY.Value += Y;
         }
     }
 }
