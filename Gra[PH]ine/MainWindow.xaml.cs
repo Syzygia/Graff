@@ -119,8 +119,8 @@ namespace Gra_PH_ine
                 NotArtist.SelectedTool.MouseMove(e.GetPosition(MainCanvas));
                 if (NotArtist.SelectedTool == NotArtist.Tools[7])
                 {
-                    ScrollViewerCanvas.ScrollToVerticalOffset(NotArtist.HandScrollX);
-                    ScrollViewerCanvas.ScrollToHorizontalOffset(NotArtist.HandScrollY);
+                 //   ScrollViewerCanvas.ScrollToVerticalOffset(NotArtist.HandScrollX);
+                  //  ScrollViewerCanvas.ScrollToHorizontalOffset(NotArtist.HandScrollY);
                 }
 
                     Invalidate();

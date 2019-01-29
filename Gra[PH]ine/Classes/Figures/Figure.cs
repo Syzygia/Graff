@@ -8,7 +8,7 @@ using System.Windows.Media;
 
 namespace Gra_PH_ine.Figures
 {
-    public abstract class Figure
+    public  class Figure
     {
         public  List<Point> points { get; set; }
         //watch out
@@ -22,9 +22,8 @@ namespace Gra_PH_ine.Figures
         }
         public virtual Figure Clone()
         {
-            return new Line
-            {
-            };
+            return new Figure();
+            
         }
         public virtual void Draw(DrawingContext kt)
         {
