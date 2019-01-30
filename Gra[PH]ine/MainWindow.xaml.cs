@@ -210,12 +210,12 @@ namespace Gra_PH_ine
 
         private void SvgBtn_Click(object sender, RoutedEventArgs e)
         {
-           // Converter.ConvertToSVG(nameBox.Text + ".html");
+            Converter.ConvertToSVG(nameBox.Text + ".html");
         }
 
         private void PngBtn_Click(object sender, RoutedEventArgs e)
         {
-           //Converter.ConvertToPNG(nameBox.Text + ".png");
+          Converter.ConvertToPNG(nameBox.Text + ".png");
         }
 
     }

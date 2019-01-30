@@ -63,6 +63,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Classes\Converter.cs" />
     <Compile Include="Classes\FgtHost.cs" />
     <Compile Include="Classes\Figures\Ellipse.cs" />
     <Compile Include="Classes\Figures\Figure.cs" />

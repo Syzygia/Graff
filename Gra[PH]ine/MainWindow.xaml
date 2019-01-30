@@ -9,7 +9,7 @@
 
     <Grid >
 
-        <Grid HorizontalAlignment="Left"  x:Name="Panel" Background="AliceBlue" Width="792" Panel.ZIndex="1" Height="49" VerticalAlignment="Top" >
+        <Grid HorizontalAlignment="Left"  x:Name="Panel" Background="AliceBlue" Width="792" Panel.ZIndex="1" Height="49" VerticalAlignment="Top" Margin="-4,0,0,0" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="45*"></RowDefinition>
             </Grid.RowDefinitions>
@@ -25,10 +25,12 @@
             </Grid.ColumnDefinitions>
             <Button Content="&lt;" Grid.Column="7" HorizontalAlignment="Left" Height="29" Margin="124,10,-109,0" VerticalAlignment="Top" Width="31" Click="Goto_Past"/>
             <Button Content="&gt;" Grid.Column="7" HorizontalAlignment="Left" Height="29" Margin="155,10,-140,0" VerticalAlignment="Top" Width="31" Click="GotoFuture" RenderTransformOrigin="0.548,0.793"/>
-            <Button Content="Save&#xD;&#xA;" Grid.Column="7" HorizontalAlignment="Left" Height="29" Margin="191,9,-176,0" VerticalAlignment="Top" Width="31" Click="SaveBtn_Click"/>
-            <Button Content="Load&#xD;&#xA;" Grid.Column="7" HorizontalAlignment="Left" Height="29" Margin="227,9,-213,0" VerticalAlignment="Top" Width="32" Click="LoadBtn_Click"/>
+            <Button Content="Save&#xD;&#xA;" Grid.Column="7" HorizontalAlignment="Left" Height="21" Margin="191,4,-176,0" VerticalAlignment="Top" Width="31" Click="SaveBtn_Click"/>
+            <Button Content="Load&#xD;&#xA;" Grid.Column="7" HorizontalAlignment="Left" Height="21" Margin="227,4,-210,0" VerticalAlignment="Top" Width="29" Click="LoadBtn_Click"/>
             <TextBox Grid.Column="7" HorizontalAlignment="Left" Height="20" Margin="298,7,-420,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168" FontSize="10" x:Name="nameBox"/>
-            <TextBox Grid.Column="7" HorizontalAlignment="Left" Height="20" Margin="297,27,-419,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168" FontSize="7" x:Name="pathBox" />
+            <TextBox Grid.Column="7" HorizontalAlignment="Left" Height="20" Margin="298,27,-420,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168" FontSize="7" x:Name="pathBox" />
+            <Button Content="Png&#xA;" Grid.Column="7" HorizontalAlignment="Left" Height="21" Margin="191,27,-176,0" VerticalAlignment="Top" Width="31" Click="PngBtn_Click"/>
+            <Button Content="SVG" Grid.Column="7" HorizontalAlignment="Left" Height="21" Margin="227,27,-212,0" VerticalAlignment="Top" Width="31" Click="SvgBtn_Click"/>
         </Grid>
 
         <Grid Margin="0,49,712,0" x:Name="Palette" Background="Bisque" Panel.ZIndex="2" Grid.RowSpan="2" >
