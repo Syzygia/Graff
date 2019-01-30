@@ -117,13 +117,13 @@ namespace Gra_PH_ine
             if (e.LeftButton == MouseButtonState.Pressed)
             {
                 NotArtist.SelectedTool.MouseMove(e.GetPosition(MainCanvas));
-                //if (NotArtist.SelectedTool == NotArtist.Tools[7])
-                //{
-                // //   ScrollViewerCanvas.ScrollToVerticalOffset(NotArtist.HandScrollX);
-                //  //  ScrollViewerCanvas.ScrollToHorizontalOffset(NotArtist.HandScrollY);
-                //}
+                if (NotArtist.SelectedTool == NotArtist.Tools[7])
+                {
+                    ScrollViewerCanvas.ScrollToVerticalOffset(NotArtist.DistanceToPointY * NotArtist.ScaleRate);
+                ScrollViewerCanvas.ScrollToHorizontalOffset(NotArtist.DistanceToPointX * NotArtist.ScaleRate);
+                }
 
-                    Invalidate();
+                Invalidate();
             }
         }
         private void Canvas_MouseLeave(object sender, MouseEventArgs e)
