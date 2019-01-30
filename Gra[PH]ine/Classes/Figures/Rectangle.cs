@@ -9,7 +9,8 @@ using System.Windows.Media;
 
 namespace Gra_PH_ine.Classes.Figures
 {
-    class Rectangle:Figure
+    [Serializable]
+   public class Rectangle:Figure
     {
         public override Figure Clone()
         {

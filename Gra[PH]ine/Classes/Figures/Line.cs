@@ -10,6 +10,7 @@ using Gra_PH_ine.Classes.Figures;
 
 namespace Gra_PH_ine.Figures
 {
+    [Serializable]
     public class Line:Figure
     {
         

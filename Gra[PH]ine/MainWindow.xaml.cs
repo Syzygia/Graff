@@ -26,6 +26,7 @@ namespace Gra_PH_ine
         {
             appWindow = this;
             InitializeComponent();
+            pathBox.Text = AppDomain.CurrentDomain.BaseDirectory;
             NotArtist.AddCondition();
             MainCanvas.Children.Add(NotArtist.FgtHost);
             for (int i = 0; i < NotArtist.Tools.Count-1; i++)//Creating Tool button
@@ -182,6 +183,39 @@ namespace Gra_PH_ine
             NotArtist.GotoSecondCondition();
             Invalidate();
         }
-        
+        private void SaveBtn_Click(object sender, RoutedEventArgs e)
+        {
+            //try
+            {
+                Serializator.Serialize(nameBox.Text + ".xml");
+            }
+           // catch
+            {
+           //     MessageBox.Show("Incorrect file");
+            }
+        }
+
+        private void LoadBtn_Click(object sender, RoutedEventArgs e)
+        {
+           // try
+            {
+                Serializator.Deserialize(nameBox.Text + ".xml");
+            }
+          //  catch
+            {
+           //     MessageBox.Show("Does not exsist");
+            }
+        }
+
+        private void SvgBtn_Click(object sender, RoutedEventArgs e)
+        {
+           // Converter.ConvertToSVG(nameBox.Text + ".html");
+        }
+
+        private void PngBtn_Click(object sender, RoutedEventArgs e)
+        {
+           //Converter.ConvertToPNG(nameBox.Text + ".png");
+        }
+
     }
 }

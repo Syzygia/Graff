@@ -6,7 +6,8 @@ using Gra_PH_ine.Figures;
 
 namespace Gra_PH_ine.Classes.Figures
 {
-    class Star : Figure
+    [Serializable]
+    public class Star : Figure
     {
         public Star()
         {

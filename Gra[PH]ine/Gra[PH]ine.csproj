@@ -74,6 +74,7 @@
     <Compile Include="Classes\Figures\Star.cs" />
     <Compile Include="Classes\Figures\ZoomRect.cs" />
     <Compile Include="Classes\NotArtist.cs" />
+    <Compile Include="Classes\Serializator.cs" />
     <Compile Include="Classes\Tools\EllipseToolcs.cs" />
     <Compile Include="Classes\Tools\FakeTool.cs" />
     <Compile Include="Classes\Tools\HandTool.cs" />

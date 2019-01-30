@@ -9,8 +9,8 @@ using System.Windows.Media;
 
 namespace Gra_PH_ine.Classes.Figures
 {
-   
-        public class Ellipse : Figure
+    [Serializable]
+    public class Ellipse : Figure
         {
             public Ellipse()
             {

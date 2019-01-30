@@ -9,7 +9,8 @@ using System.Windows.Media;
 
 namespace Gra_PH_ine.Classes.Figures
 {
-    class RoundRect:Figure
+    [Serializable]
+    public class RoundRect:Figure
     {
         public RoundRect()
         {

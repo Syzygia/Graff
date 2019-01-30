@@ -9,8 +9,9 @@ using System.Windows;
 using System.Windows.Media;
 
 namespace Gra_PH_ine.Classes.Figures
-{ 
-    class Polyline:Figure
+{
+    [Serializable]
+   public class Polyline:Figure
     {
         public Polyline()
         {
