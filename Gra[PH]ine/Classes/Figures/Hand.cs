@@ -39,5 +39,9 @@ namespace Gra_PH_ine.Figures
         {
             //kt.DrawLine(Line, points[0], points[1]);
         }
+        public override string ConvertToSVG()
+        {
+            return "";
+        }
     }
 }

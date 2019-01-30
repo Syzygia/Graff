@@ -46,7 +46,10 @@ namespace Gra_PH_ine.Figures
         {
 
         }
-
+        public virtual string ConvertToSVG()
+        {
+            return "";
+        }
         public Brush Fill { get; set; }
         public Pen Line;
     }

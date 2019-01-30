@@ -40,5 +40,9 @@ namespace Gra_PH_ine.Classes.Figures
         {
             points[1] = p;
         }
+        public override string ConvertToSVG()
+        {
+            return "";
+        }
     }
 }
