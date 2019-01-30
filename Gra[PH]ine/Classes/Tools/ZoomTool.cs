@@ -37,25 +37,17 @@ namespace Gra_PH_ine.Classes.Tools
         {            
             pressed = false;
             if (Point.Subtract(NotArtist.Figures[NotArtist.Figures.Count - 1].points[0], NotArtist.Figures[NotArtist.Figures.Count - 1].points[1]).Length > 50)
-            {
-                NotArtist.ScaleRateX = NotArtist.CanvasWidth / Math.Abs(NotArtist.Figures[NotArtist.Figures.Count - 1].points[0].X - NotArtist.Figures[NotArtist.Figures.Count - 1].points[1].X);
+            {               
+               Double ScaleRateX = NotArtist.CanvasWidth / Math.Abs(NotArtist.Figures[NotArtist.Figures.Count - 1].points[0].X - NotArtist.Figures[NotArtist.Figures.Count - 1].points[1].X);
+               Double ScaleRateY = NotArtist.CanvasHeigth / (Math.Abs(NotArtist.Figures[NotArtist.Figures.Count - 1].points[1].Y - NotArtist.Figures[NotArtist.Figures.Count - 1].points[0].Y));              
 
-                if (NotArtist.Figures[NotArtist.Figures.Count - 1].points[1].Y > NotArtist.Figures[NotArtist.Figures.Count - 1].points[0].Y)
+                if (ScaleRateX > ScaleRateY)
                 {
-                    NotArtist.ScaleRateY = NotArtist.CanvasHeigth / (NotArtist.Figures[NotArtist.Figures.Count - 1].points[1].Y - NotArtist.Figures[NotArtist.Figures.Count - 1].points[0].Y);
+                    NotArtist.ScaleRate = ScaleRateX;
                 }
                 else
                 {
-                    NotArtist.ScaleRateY = NotArtist.CanvasHeigth / (NotArtist.Figures[NotArtist.Figures.Count - 1].points[0].Y - NotArtist.Figures[NotArtist.Figures.Count - 1].points[1].Y);
-                }
-
-                if (NotArtist.ScaleRateX > NotArtist.ScaleRateY)
-                {
-                    NotArtist.ScaleRateY = NotArtist.ScaleRateX;
-                }
-                else
-                {
-                    NotArtist.ScaleRateX = NotArtist.ScaleRateY;
+                    NotArtist.ScaleRate = ScaleRateY;
                 }
 
                 if (NotArtist.Figures[NotArtist.Figures.Count - 1].points[1].X > NotArtist.Figures[NotArtist.Figures.Count - 1].points[0].X)
@@ -78,13 +70,15 @@ namespace Gra_PH_ine.Classes.Tools
             }
             else
             {
-                NotArtist.ScaleRateX = 1;
-                NotArtist.ScaleRateY = 1;
-                NotArtist.DistanceToPointX = 0;
+                NotArtist.ScaleRate = 1;
                 NotArtist.DistanceToPointY = 0;
+                NotArtist.DistanceToPointX = 0;
             }
             NotArtist.Figures.Remove(NotArtist.Figures[NotArtist.Figures.Count - 1]);
+        }
+            
+            
             
         }
     }
-}
+

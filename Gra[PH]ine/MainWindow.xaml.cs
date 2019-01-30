@@ -163,9 +163,9 @@ namespace Gra_PH_ine
             NotArtist.SelectedTool.MouseUp(e.GetPosition(MainCanvas));
             if (NotArtist.SelectedTool==NotArtist.Tools[6])
             {
-                MainCanvas.LayoutTransform = new ScaleTransform(NotArtist.ScaleRateX, NotArtist.ScaleRateY);
-                ScrollViewerCanvas.ScrollToVerticalOffset(NotArtist.DistanceToPointY * NotArtist.ScaleRateY);
-                ScrollViewerCanvas.ScrollToHorizontalOffset(NotArtist.DistanceToPointX * NotArtist.ScaleRateX);
+                MainCanvas.LayoutTransform = new ScaleTransform(NotArtist.ScaleRate, NotArtist.ScaleRate);
+                ScrollViewerCanvas.ScrollToVerticalOffset(NotArtist.DistanceToPointY * NotArtist.ScaleRate);
+                ScrollViewerCanvas.ScrollToHorizontalOffset(NotArtist.DistanceToPointX * NotArtist.ScaleRate);
             }
             Invalidate();
         }

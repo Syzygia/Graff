@@ -20,8 +20,7 @@ namespace Gra_PH_ine.Classes
         public static FgtHost FgtHost = new FgtHost();
         public static Brush SelectedFill = Brushes.White;
         public static Pen SelectedLine = new Pen(Brushes.Black, 4);
-        public static double ScaleRateX = 1;
-        public static double ScaleRateY = 1;
+        public static double ScaleRate = 1;       
         public static double DistanceToPointX;
         public static double DistanceToPointY;
         public static double HandScrollX;
@@ -48,21 +47,7 @@ namespace Gra_PH_ine.Classes
             foreach (Figure figure in figuresNow)
             {
                 Figures.Add(figure.Clone());
-            }
-            //  Figures =new List<Figure>(figuresNow);
-            //foreach (Figure figure in ConditionsCanvas[ConditionNumber - 1])
-            //{
-            //    figure.Select = false;
-            //    figure.SelectRect = null;
-            //}
-            //if (ConditionsCanvas.Count > 1)
-            //{
-            //    foreach (Figure figure in ConditionsCanvas[ConditionNumber - 2])
-            //    {
-            //        figure.Select = false;
-            //        figure.SelectRect = null;
-            //    }
-            //}
+            }            
         }
         public static void GotoPastCondition()
         {
