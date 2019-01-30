@@ -218,5 +218,10 @@ namespace Gra_PH_ine
           Converter.ConvertToPNG(nameBox.Text + ".png");
         }
 
+        private void Clear_click(object sender, RoutedEventArgs e)
+        {
+            NotArtist.Figures.Clear();
+            Invalidate();
+        }
     }
 }
