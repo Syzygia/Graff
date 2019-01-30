@@ -185,26 +185,27 @@ namespace Gra_PH_ine
         }
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
-            //try
+            try
             {
                 Serializator.Serialize(nameBox.Text + ".xml");
             }
-           // catch
+            catch
             {
-           //     MessageBox.Show("Incorrect file");
+                MessageBox.Show("Incorrect file");
             }
         }
 
         private void LoadBtn_Click(object sender, RoutedEventArgs e)
         {
-           // try
+            try
             {
                 Serializator.Deserialize(nameBox.Text + ".xml");
             }
-          //  catch
+             catch
             {
-           //     MessageBox.Show("Does not exsist");
+                MessageBox.Show("Does not exsist");
             }
+            Invalidate();
         }
 
         private void SvgBtn_Click(object sender, RoutedEventArgs e)
