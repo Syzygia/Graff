@@ -12,6 +12,7 @@
 *.sln
 App.xaml.cs
 .html
+Gra[PH]ine.sln
 
 # Build results
 [Dd]ebug/
