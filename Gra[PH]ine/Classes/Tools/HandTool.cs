@@ -27,7 +27,7 @@ namespace Gra_PH_ine.Classes.Tools
                 MainWindow.appWindow.ScrollViewerCanvas.ScrollToHorizontalOffset(NotArtist.HandScrollY);
                 // NotArtist.delta = Point.Subtract(lastPos, p);
                 //   MainWindow.appWindow.Set_Offset(NotArtist.delta.X / 500, NotArtist.delta.Y / 500);
-                lastPos = p;
+                //lastPos = p;
             }
         }
 

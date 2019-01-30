@@ -21,5 +21,9 @@ namespace Gra_PH_ine.Classes.Tools
             if (pressed)
                 NotArtist.Figures[NotArtist.Figures.Count - 1].AddPoint(p);
         }
+        public override void MouseUp(Point p)
+        {
+            // base.MouseUp(p);
+        }
     }
 }

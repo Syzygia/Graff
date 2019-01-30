@@ -12,6 +12,10 @@ namespace Gra_PH_ine.Classes.Figures
    
         public class Ellipse : Figure
         {
+            public Ellipse()
+            {
+
+            }
             public Ellipse(Point p) : base(p)
             {
             Fill = NotArtist.SelectedFill.Clone();
@@ -28,6 +32,16 @@ namespace Gra_PH_ine.Classes.Figures
 
                 dc.DrawEllipse(Fill, Line, center, space.X, space.Y);
             }
-        }
-    }
+            public override Figure Clone()
+            {
+                return new Ellipse
+                {
+                    points = new List<Point>(points),
+                    Fill = this.Fill,
+                    Line = this.Line
+                };
+            }
+
+         }      
+ }
 
