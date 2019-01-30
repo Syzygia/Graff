@@ -11,7 +11,7 @@ using System.Windows.Media;
 namespace Gra_PH_ine.Classes.Figures
 {
     [Serializable]
-   public class Rectangle:Figure
+    public class Rectangle : Figure
     {
         public override Figure Clone()
         {
@@ -37,7 +37,7 @@ namespace Gra_PH_ine.Classes.Figures
         }
         public override void Draw(DrawingContext kt)
         {
-            kt.DrawRectangle(Fill,Line,new Rect (points[0],points[1]));
+            kt.DrawRectangle(Fill, Line, new Rect(points[0], points[1]));
         }
         public override string ConvertToSVG()
         {
@@ -47,7 +47,10 @@ namespace Gra_PH_ine.Classes.Figures
             var opacity = ((SolidColorBrush)Fill).Color.A / 255.0;
             var fill = ((SolidColorBrush)Fill).Color.ToString(culture).Remove(1, 2);
             var stroke = ((SolidColorBrush)Line.Brush).Color.ToString(culture).Remove(1, 2);
-            return "<ellipse cx=" + point0.X.ToString(culture) + " cy=" + point0.Y.ToString(culture) + " fill-opacity=" + opacity.ToString(culture) + " rx=" + size.X.ToString(culture) + " ry=" + size.Y.ToString(culture) + " style=\"fill:" + fill + ";stroke:" + stroke + ";stroke-width:\"" + Line.Thickness.ToString(culture) + " />";
+           
+
+            return  "<rect x=" + points[0].X.ToString(culture) + " y=" + points[0].Y.ToString(culture) + " fill-opacity=" + opacity.ToString(culture) + " width=" + size.X.ToString(culture) + " height=" + size.Y.ToString(culture) + " style=\"fill:" + fill + ";stroke:" + stroke + ";stroke-width:" + Line.Thickness.ToString(culture) + "\" />";
+
         }
     }
 }
